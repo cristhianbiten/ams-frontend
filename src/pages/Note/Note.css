@@ -1,0 +1,9 @@
+.border-input {
+    border-color: gray;
+}
+
+.textarea-input {
+    border-color: gray;
+    resize: none;
+    height: 5rem;
+}
