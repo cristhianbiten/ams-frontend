@@ -33,7 +33,7 @@ const Home = () => {
             )}
             <Row >
                 {notes && notes.map((note, index) => (
-                    <Col key={note._id} xs={12} md={4}>
+                    <Col key={note._id} xs={12} md={6} lg={4}>
                         <NoteDetail note={note} />
                     </Col>
                 ))}
