@@ -217,7 +217,7 @@ const Editar = () => {
                       rows={3}
                       name="descricaoFuncional"
                       value={(formData && formData.descricaoFuncional) || ''}
-                      className='textarea-input'
+                      className='textarea-input-large'
                       onChange={handleInputChange}
                     />
                   </Form.Group>
@@ -247,7 +247,7 @@ const Editar = () => {
                       rows={3}
                       name="cutover"
                       value={(formData && formData.cutover) || ''}
-                      className='textarea-input'
+                      className='textarea-input-large'
                       onChange={handleInputChange}
                     />
                   </Form.Group>
@@ -505,7 +505,7 @@ const Editar = () => {
                       type="text"
                       name="sintomas"
                       value={(formData && formData.sintomas) || ''}
-                      className='textarea-input'
+                      className='textarea-input-large'
                       onChange={handleInputChange}
                     />
                   </Form.Group>
@@ -553,7 +553,7 @@ const Editar = () => {
                       type="text"
                       name="causaProblema"
                       value={(formData && formData.causaProblema) || ''}
-                      className='textarea-input'
+                      className='textarea-input-large'
                       onChange={handleInputChange}
                     />
                   </Form.Group>
@@ -569,7 +569,7 @@ const Editar = () => {
                       type="text"
                       name="descricaoSolucao"
                       value={(formData && formData.descricaoSolucao) || ''}
-                      className='textarea-input'
+                      className='textarea-input-large'
                       onChange={handleInputChange}
                     />
                   </Form.Group>
@@ -644,7 +644,7 @@ const Editar = () => {
         <div className="row">
           <div className="col">
             <Button id='criar' variant="secondary" size="lg" type="submit" style={{ width: '100%' }} href={`/history/${formData._id}`}>
-              Narrativas
+              Reuniões e analises
             </Button>
           </div>
           {!loading && (

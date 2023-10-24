@@ -594,7 +594,7 @@ function Note() {
                         <div className="row">
                             <div className="col">
                                 <Button id='criar' variant="secondary" size="lg" type="submit" style={{ width: '100%' }} href={`/narrativas/${note._id}`}>
-                                    Narrativas
+                                Reuniões e analises
                                 </Button>
                             </div>
                             <div className="col">

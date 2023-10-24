@@ -77,7 +77,7 @@ function History() {
                 <Form onSubmit={insertHistoryData}
                     style={{ width: '50%', margin: 'auto', border: '1px solid #ccc', padding: '20px', borderRadius: '10px', marginBottom: '20px' }}
                 >
-                    <h2 style={{ textAlign: 'center' }} >Narrativas</h2>
+                    <h2 style={{ textAlign: 'center' }} >Resumo de Reuniões e/ou analises</h2>
                     <Form.Group className="mb-3" controlId="descricao">
                         <Form.Label>Descrição</Form.Label>
                         <Form.Control

@@ -7,3 +7,9 @@
     resize: none;
     height: 5rem;
 }
+
+.textarea-input-large {
+    border-color: gray;
+    resize: none;
+    height: 7rem;
+}

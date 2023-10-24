@@ -297,7 +297,7 @@ const NewPost = () => {
                                                         name="descricaoFuncional"
                                                         placeholder='Digite a descrição funcional da melhoria'
                                                         onChange={(e) => setDescricaoFuncional(e.target.value)}
-                                                        className='textarea-input'
+                                                        className='textarea-input-large'
                                                     />
                                                 </Form.Group>
                                             </Col>
@@ -329,7 +329,7 @@ const NewPost = () => {
                                                         name="cutover"
                                                         placeholder='Digite o plano de cutover'
                                                         onChange={(e) => setCutover(e.target.value)}
-                                                        className='textarea-input'
+                                                        className='textarea-input-large'
                                                     />
                                                 </Form.Group>
                                             </Col>
@@ -433,7 +433,7 @@ const NewPost = () => {
                                                         name="causaProblema"
                                                         placeholder='Digite a possível causa do problema'
                                                         onChange={(e) => setCausaProblema(e.target.value)}
-                                                        className='textarea-input'
+                                                        className='textarea-input-large'
                                                     />
                                                 </Form.Group>
                                             </Col>
@@ -595,7 +595,7 @@ const NewPost = () => {
                                                     name="sintomas"
                                                     placeholder='Digite os sintomas'
                                                     onChange={(e) => setDuvida(e.target.value)}
-                                                    className='textarea-input'
+                                                    className='textarea-input-large'
                                                 />
                                             </Form.Group>
                                         </Col>
@@ -643,7 +643,7 @@ const NewPost = () => {
                                                     name="causaProblema"
                                                     placeholder='Digite a causa do problema'
                                                     onChange={(e) => setCausaProblema(e.target.value)}
-                                                    className='textarea-input'
+                                                    className='textarea-input-large'
                                                 />
                                             </Form.Group>
                                         </Col>
@@ -659,7 +659,7 @@ const NewPost = () => {
                                                     name="descricaoSolucao"
                                                     placeholder='Digite a descrição da solução'
                                                     onChange={(e) => setDescricaoSolucao(e.target.value)}
-                                                    className='textarea-input'
+                                                    className='textarea-input-large'
                                                 />
                                             </Form.Group>
                                         </Col>
@@ -683,7 +683,7 @@ const NewPost = () => {
                                     <Row>
                                         <Col>
                                             <Form.Group className="mb-3" controlId="termoBusca">
-                                                <Form.Label>Termos de Busca / Transações Envolvidas / Nº da Mensagem:</Form.Label>
+                                                <Form.Label>Termos de Busca / Transações / Mensagens:</Form.Label>
                                                 <Form.Control
                                                     as="textarea"
                                                     rows={3}
