@@ -74,11 +74,11 @@ function App() {
               element={auth ? <Search /> : <Navigate to="/login" />}
             />
             <Route
-              path="login"
+              path="/login"
               element={!auth ? <Login /> : <Navigate to="/" />}
             />
             <Route
-              path="register"
+              path="/register"
               element={!auth ? <Register /> : <Navigate to="/" />}
             />
             <Route />
