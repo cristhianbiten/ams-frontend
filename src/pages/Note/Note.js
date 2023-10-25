@@ -2,7 +2,6 @@ import './Note.css'
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import jsPDF from 'jspdf';
 
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -12,6 +11,7 @@ import Col from 'react-bootstrap/Col';
 
 // Redux
 import { getNote } from "../../slices/noteSlice"
+import Pdf from '../../components/Pdf/Pdf';
 
 
 function Note() {
@@ -28,6 +28,7 @@ function Note() {
     useEffect(() => {
         dispatch(getNote(id));
     }, [dispatch, id]);
+
 
 
     return (
@@ -173,7 +174,7 @@ function Note() {
                                                     rows={3}
                                                     name="descricaoFuncional"
                                                     value={(note && note.descricaoFuncional) || ''}
-                                                    className='textarea-input'
+                                                    className='textarea-input-large'
                                                     readOnly
                                                 />
                                             </Form.Group>
@@ -203,7 +204,7 @@ function Note() {
                                                     rows={3}
                                                     name="cutover"
                                                     value={(note && note.cutover) || ''}
-                                                    className='textarea-input'
+                                                    className='textarea-input-large'
                                                     readOnly
                                                 />
                                             </Form.Group>
@@ -298,7 +299,7 @@ function Note() {
                                                     rows={3}
                                                     name="causaProblema"
                                                     value={(note && note.causaProblema) || ''}
-                                                    className='textarea-input'
+                                                    className='textarea-input-large'
                                                     readOnly
                                                 />
                                             </Form.Group>
@@ -423,7 +424,7 @@ function Note() {
                                     <Row>
                                         <Col>
                                             <Form.Group className="mb-3" controlId="termoBusca">
-                                                <Form.Label>ETermos de Busca / Transações Envolvidas / Nº da Mensagem:</Form.Label>
+                                                <Form.Label>Termos de Busca / Transações Envolvidas / Nº da Mensagem:</Form.Label>
                                                 <Form.Control
                                                     as="textarea"
                                                     rows={3}
@@ -455,7 +456,7 @@ function Note() {
                                                     type="text"
                                                     name="sintomas"
                                                     value={(note && note.sintomas) || ''}
-                                                    className='textarea-input'
+                                                    className='textarea-input-large'
                                                     readOnly
                                                 />
                                             </Form.Group>
@@ -544,7 +545,7 @@ function Note() {
                                     <Row>
                                         <Col>
                                             <Form.Group className="mb-3" controlId="termoBusca">
-                                                <Form.Label>Termos de Busca / Transações Envolvidas / Nº da Mensagem:</Form.Label>
+                                                <Form.Label>Termos de Busca / Transações / Mensagem:</Form.Label>
                                                 <Form.Control
                                                     as="textarea"
                                                     rows={3}
@@ -594,14 +595,13 @@ function Note() {
                         <div className="row">
                             <div className="col">
                                 <Button id='criar' variant="secondary" size="lg" type="submit" style={{ width: '100%' }} href={`/narrativas/${note._id}`}>
-                                Reuniões e analises
+                                    Reuniões e analises
                                 </Button>
                             </div>
                             <div className="col">
-                                <Button variant="warning" size="lg" onClick={() => generatePDF(note)} id='gerar'
-                                    style={{ width: '100%' }}>
-                                    Gerar PDF
-                                </Button>
+
+                                <Pdf note={note} />
+
                             </div>
                         </div>
                     </div>
@@ -616,78 +616,4 @@ function Note() {
 export default Note
 
 
-const generatePDF = (note) => {
-    const doc = new jsPDF();
 
-    // Mapeamento de descrições personalizadas para campos
-    const fieldDescriptions = {
-        idChamado: "ID do Chamado",
-        titulo: "Título",
-        modulo: "Módulo/Submódulo",
-        cliente: "Empresa",
-        consultor: "Consultor responsável",
-        solicitacao: "Solicitação",
-        prioridade: "Prioridade",
-        origemSolicitacao: "Origem da Solicitação de Melhoria",
-        termoBusca: "Termos de Busca / Transações Envolvidas / Nº da Mensagem",
-        processoNegocio: "Processo de Negócio",
-        descricaoFuncional: "Descrição Funcional da Melhoria",
-        referenciaFt: "Referência a Especificação Funcional e Técnica",
-        cutover: "Plano de Cutover",
-        request: "Request",
-        definicaoProblema: "Definição do Problema",
-        causaProblema: "Possíveis Causas do Problema",
-        alternativaSolucao: "Alternativas de Solução Possíveis",
-        pedidoMelhoria: "Pedidos de Melhorias Abertas Após Análise",
-        reproducaoProblema: "Reprodução do Problema",
-        sintomas: "Sintomas",
-        reproducaoProcesso: "Reprodução do Processo",
-        esclarecimentoDuvida: "Esclarecimento da Dúvida",
-        duvida: "Dúvida",
-        reproducaoErro: "Reprodução do Erro",
-        descricaoSolucao: "Descrição da Solução",
-        configuracoesExecutadas: "Configurações Executadas",
-        objetosAbap: "Objetos ABAP criados/alterados",
-        createdAt: "Data de criação",
-        updatedAt: "Data de atualização",
-        __v: "Versão",
-        // Adicione mais campos e descrições personalizadas conforme necessário
-    };
-
-    // Defina o título do PDF (centralizado)
-    doc.setFontSize(16);
-    const title = `Note ${note.idChamado}`;
-    const titleWidth = doc.getStringUnitWidth(title) * doc.internal.getFontSize() / doc.internal.scaleFactor;
-    const pageWidth = doc.internal.pageSize.getWidth();
-    const xPosition = (pageWidth - titleWidth) / 2;
-    doc.text(title, xPosition, 10, { align: 'center' });
-
-    // Campos a serem excluídos
-    const excludedFields = ['_id', 'userId', 'userName', 'history'];
-
-    // Itere sobre os campos e valores da nota e adicione-os ao PDF
-    let yPosition = 30;
-    const fieldSpacing = 10;
-
-    Object.entries(note).forEach(([fieldName, fieldValue]) => {
-        if (fieldValue && !excludedFields.includes(fieldName)) { // Verifique se o campo não está na lista de campos excluídos
-            doc.setFontSize(12);
-            const fieldDescription = fieldDescriptions[fieldName] || fieldName;
-            doc.setFont("helvetica", "bold"); // Define a fonte como negrito
-            doc.text(`${fieldDescription}:`, 10, yPosition);
-            yPosition += fieldSpacing;
-            doc.setFont("helvetica", "normal"); // Volta ao estilo normal
-
-            // Converta o valor para string antes de adicioná-lo ao PDF
-            const fieldValueString = typeof fieldValue === 'object' ? JSON.stringify(fieldValue) : fieldValue.toString();
-
-            // Quebre o valor em várias linhas se for uma área de texto
-            const textLines = doc.splitTextToSize(fieldValueString, 190);
-            doc.text(textLines, 10, yPosition);
-            yPosition += textLines.length * fieldSpacing;
-        }
-    });
-
-    // Salve o PDF com um nome de arquivo
-    doc.save(`Note_${note.idChamado}.pdf`);
-}

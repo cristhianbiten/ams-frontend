@@ -27,7 +27,7 @@ function History() {
                 <h2>Dashboard</h2>
                 {histories && histories.length === 0 ? (
                     <div className="noposts">
-                        <p>Não foram encontrados narrativas</p>
+                        <p>Não foram encontrados reuniões e/ou analises</p>
                     </div>
                 ) : (
                     <div className="post_header" >
