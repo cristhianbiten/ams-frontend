@@ -139,14 +139,7 @@ function Note() {
                                         <Col>
                                             <Form.Group className="mb-3" controlId="origemSolicitacao">
                                                 <Form.Label>Origem da Solicitação de Melhoria:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    name="origemSolicitacao"
-                                                    value={(note && note.origemSolicitacao) || ''}
-                                                    readOnly
-                                                    className='textarea-input'
-                                                />
+                                                <p className="bordered-paragraph">{(note && note.origemSolicitacao) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                     </Row>
@@ -154,14 +147,7 @@ function Note() {
                                         <Col>
                                             <Form.Group className="mb-3" controlId="processoNegocio">
                                                 <Form.Label>Processo de Negócio:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    name="processoNegocio"
-                                                    value={(note && note.processoNegocio) || ''}
-                                                    readOnly
-                                                    className='textarea-input'
-                                                />
+                                                <p className="bordered-paragraph">{(note && note.processoNegocio) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                     </Row>
@@ -169,14 +155,7 @@ function Note() {
                                         <Col>
                                             <Form.Group className="mb-3" controlId="descricaoFuncional">
                                                 <Form.Label>Descrição Funcional da Melhoria:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    name="descricaoFuncional"
-                                                    value={(note && note.descricaoFuncional) || ''}
-                                                    className='textarea-input-large'
-                                                    readOnly
-                                                />
+                                                <p className='bordered-paragraph'>{(note && note.descricaoFuncional) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                     </Row>
@@ -184,14 +163,7 @@ function Note() {
                                         <Col>
                                             <Form.Group className="mb-3" controlId="referenciaFt">
                                                 <Form.Label>Referência a Especificação Funcional e Técnica:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    name="referenciaFt"
-                                                    value={(note && note.referenciaFt) || ''}
-                                                    className='textarea-input'
-                                                    readOnly
-                                                />
+                                                <p className='bordered-paragraph'>{(note && note.referenciaFt) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                     </Row>
@@ -199,42 +171,21 @@ function Note() {
                                         <Col>
                                             <Form.Group className="mb-3" controlId="cutover">
                                                 <Form.Label>Plano de Cutover:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    name="cutover"
-                                                    value={(note && note.cutover) || ''}
-                                                    className='textarea-input-large'
-                                                    readOnly
-                                                />
+                                                <p className='bordered-paragraph'>{(note && note.cutover) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                     </Row>
                                     <Row>
                                         <Col>
                                             <Form.Group className="mb-3" controlId="termoBusca">
-                                                <Form.Label>Termos de Busca / Transações Envolvidas / Nº da Mensagem:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    name="termoBusca"
-                                                    value={(note && note.termoBusca) || ''}
-                                                    readOnly
-                                                    className='textarea-input'
-                                                />
+                                                <Form.Label>Termos de Busca / Transações / Mensagem:</Form.Label>
+                                                <p className='bordered-paragraph'>{(note && note.termoBusca) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                         <Col>
-                                            <Form.Group className="mb-3" controlId="request">
+                                            <Form.Group className="mb-3" controlId="termoBusca">
                                                 <Form.Label>Request:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    name="request"
-                                                    value={(note && note.request) || ''}
-                                                    className='textarea-input'
-                                                    readOnly
-                                                />
+                                                <p className='bordered-paragraph'>{(note && note.request) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                     </Row>
@@ -264,14 +215,7 @@ function Note() {
                                         <Col>
                                             <Form.Group className="mb-3" controlId="processoNegocio">
                                                 <Form.Label>Processo de Negócio:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    name="processoNegocio"
-                                                    value={(note && note.processoNegocio) || ''}
-                                                    className='textarea-input'
-                                                    readOnly
-                                                />
+                                                <p className='bordered-paragraph'>{(note && note.processoNegocio) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                     </Row>
@@ -279,14 +223,7 @@ function Note() {
                                         <Col>
                                             <Form.Group className="mb-3" controlId="reproducaoProblema">
                                                 <Form.Label>Reprodução do Problema:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    name="reproducaoProblema"
-                                                    value={(note && note.reproducaoProblema) || ''}
-                                                    className='textarea-input'
-                                                    readOnly
-                                                />
+                                                <p className='bordered-paragraph'>{(note && note.reproducaoProblema) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                     </Row>
@@ -294,14 +231,7 @@ function Note() {
                                         <Col>
                                             <Form.Group className="mb-3" controlId="causaProblema">
                                                 <Form.Label>Possíveis Causas do Problema:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    name="causaProblema"
-                                                    value={(note && note.causaProblema) || ''}
-                                                    className='textarea-input-large'
-                                                    readOnly
-                                                />
+                                                <p className='bordered-paragraph'>{(note && note.causaProblema) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                     </Row>
@@ -309,14 +239,7 @@ function Note() {
                                         <Col>
                                             <Form.Group className="mb-3" controlId="alternativaSolucao">
                                                 <Form.Label>Alternativas de Solução Possíveis:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    name="alternativaSolucao"
-                                                    value={(note && note.alternativaSolucao) || ''}
-                                                    className='textarea-input'
-                                                    readOnly
-                                                />
+                                                <p className='bordered-paragraph'>{(note && note.alternativaSolucao) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                     </Row>
@@ -324,14 +247,7 @@ function Note() {
                                         <Col>
                                             <Form.Group className="mb-3" controlId="pedidoMelhoria">
                                                 <Form.Label>Pedidos de Melhorias Abertas Após Análise:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    name="pedidoMelhoria"
-                                                    value={(note && note.pedidoMelhoria) || ''}
-                                                    className='textarea-input'
-                                                    readOnly
-                                                />
+                                                <p className='bordered-paragraph'>{(note && note.pedidoMelhoria) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                     </Row>
@@ -339,14 +255,7 @@ function Note() {
                                         <Col>
                                             <Form.Group className="mb-3" controlId="termoBusca">
                                                 <Form.Label>Termos de Busca / Transações Envolvidas / Nº da Mensagem:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    name="termoBusca"
-                                                    value={(note && note.termoBusca) || ''}
-                                                    className='textarea-input'
-                                                    readOnly
-                                                />
+                                                <p className='bordered-paragraph'>{(note && note.termoBusca) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                     </Row>
@@ -361,15 +270,7 @@ function Note() {
                                         <Col>
                                             <Form.Group className="mb-3" controlId="duvida">
                                                 <Form.Label>Dúvida:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    type="text"
-                                                    name="duvida"
-                                                    value={(note && note.duvida) || ''}
-                                                    className='textarea-input'
-                                                    readOnly
-                                                />
+                                                <p className='bordered-paragraph'>{(note && note.duvida) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                     </Row>
@@ -377,15 +278,7 @@ function Note() {
                                         <Col>
                                             <Form.Group className="mb-3" controlId="processoNegocio">
                                                 <Form.Label>Processo de Negócio:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    type="text"
-                                                    name="processoNegocio"
-                                                    value={(note && note.processoNegocio) || ''}
-                                                    className='textarea-input'
-                                                    readOnly
-                                                />
+                                                <p className='bordered-paragraph'>{(note && note.processoNegocio) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                     </Row>
@@ -393,15 +286,7 @@ function Note() {
                                         <Col>
                                             <Form.Group className="mb-3" controlId="reproducaoProcesso">
                                                 <Form.Label>Reprodução do Processo:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    type="text"
-                                                    name="reproducaoProcesso"
-                                                    value={(note && note.reproducaoProcesso) || ''}
-                                                    className='textarea-input'
-                                                    readOnly
-                                                />
+                                                <p className='bordered-paragraph'>{(note && note.reproducaoProcesso) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                     </Row>
@@ -409,15 +294,7 @@ function Note() {
                                         <Col>
                                             <Form.Group className="mb-3" controlId="esclarecimentoDuvida">
                                                 <Form.Label>Esclarecimento da Dúvida:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    type="text"
-                                                    name="esclarecimentoDuvida"
-                                                    value={note.esclarecimentoDuvida}
-                                                    className='textarea-input'
-                                                    readOnly
-                                                />
+                                                <p className='bordered-paragraph'>{(note && note.esclarecimentoDuvida) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                     </Row>
@@ -425,15 +302,7 @@ function Note() {
                                         <Col>
                                             <Form.Group className="mb-3" controlId="termoBusca">
                                                 <Form.Label>Termos de Busca / Transações Envolvidas / Nº da Mensagem:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    type="text"
-                                                    name="termoBusca"
-                                                    value={(note && note.termoBusca) || ''}
-                                                    className='textarea-input'
-                                                    readOnly
-                                                />
+                                                <p className='bordered-paragraph'>{(note && note.termoBusca) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                     </Row>
@@ -450,15 +319,7 @@ function Note() {
                                         <Col>
                                             <Form.Group className="mb-3" controlId="sintomas">
                                                 <Form.Label>Sintomas:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    type="text"
-                                                    name="sintomas"
-                                                    value={(note && note.sintomas) || ''}
-                                                    className='textarea-input-large'
-                                                    readOnly
-                                                />
+                                                <p className='bordered-paragraph'>{(note && note.sintomas) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                     </Row>
@@ -466,15 +327,7 @@ function Note() {
                                         <Col>
                                             <Form.Group className="mb-3" controlId="processoNegocio">
                                                 <Form.Label>Processo de Negócio:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    type="text"
-                                                    name="processoNegocio"
-                                                    value={(note && note.processoNegocio) || ''}
-                                                    className='textarea-input'
-                                                    readOnly
-                                                />
+                                                <p className='bordered-paragraph'>{(note && note.processoNegocio) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                     </Row>
@@ -482,15 +335,7 @@ function Note() {
                                         <Col>
                                             <Form.Group className="mb-3" controlId="reproducaoErro">
                                                 <Form.Label>Reprodução do Erro:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    type="text"
-                                                    name="reproducaoErro"
-                                                    value={(note && note.reproducaoErro) || ''}
-                                                    className='textarea-input'
-                                                    readOnly
-                                                />
+                                                <p className='bordered-paragraph'>{(note && note.reproducaoErro) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                     </Row>
@@ -498,15 +343,7 @@ function Note() {
                                         <Col>
                                             <Form.Group className="mb-3" controlId="causaProblema">
                                                 <Form.Label>Causa do Problema:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    type="text"
-                                                    name="causaProblema"
-                                                    value={(note && note.causaProblema) || ''}
-                                                    className='textarea-input'
-                                                    readOnly
-                                                />
+                                                <p className='bordered-paragraph'>{(note && note.causaProblema) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                     </Row>
@@ -514,15 +351,7 @@ function Note() {
                                         <Col>
                                             <Form.Group className="mb-3" controlId="descricaoSolucao">
                                                 <Form.Label>Descrição da Solução:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    type="text"
-                                                    name="descricaoSolucao"
-                                                    value={(note && note.descricaoSolucao) || ''}
-                                                    className='textarea-input'
-                                                    readOnly
-                                                />
+                                                <p className='bordered-paragraph'>{(note && note.configuracoesExecutadas) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                     </Row>
@@ -530,15 +359,7 @@ function Note() {
                                         <Col>
                                             <Form.Group className="mb-3" controlId="configuracoesExecutadas">
                                                 <Form.Label>Configurações Executadas:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    type="text"
-                                                    name="configuracoesExecutadas"
-                                                    value={(note && note.configuracoesExecutadas) || ''}
-                                                    className='textarea-input'
-                                                    readOnly
-                                                />
+                                                <p className='bordered-paragraph'>{(note && note.configuracoesExecutadas) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                     </Row>
@@ -546,44 +367,19 @@ function Note() {
                                         <Col>
                                             <Form.Group className="mb-3" controlId="termoBusca">
                                                 <Form.Label>Termos de Busca / Transações / Mensagem:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    type="text"
-                                                    name="termoBusca"
-                                                    value={(note && note.termoBusca) || ''}
-                                                    className='textarea-input'
-                                                    readOnly
-                                                />
+                                                <p className='bordered-paragraph'>{(note && note.termoBusca) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                         <Col>
                                             <Form.Group className="mb-3" controlId="objetosAbap">
                                                 <Form.Label>Objetos ABAP criados/alterados:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    type="text"
-                                                    name="objetosAbap"
-                                                    value={(note && note.objetosAbap) || ''}
-                                                    className='textarea-input'
-                                                    readOnly
-                                                />
+                                                <p className='bordered-paragraph'>{(note && note.objetosAbap) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                         <Col>
                                             <Form.Group className="mb-3" controlId="request">
                                                 <Form.Label>Request:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    type="text"
-                                                    name="request"
-                                                    placeholder='Digite o request'
-                                                    value={(note && note.request) || ''}
-                                                    className='textarea-input'
-                                                    readOnly
-                                                />
+                                                <p className='bordered-paragraph'>{(note && note.request) || ''}</p>
                                             </Form.Group>
                                         </Col>
                                     </Row>
