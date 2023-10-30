@@ -22,7 +22,7 @@ const NewPost = () => {
         idcamposvariaveis_775: "",
         problema: "",
         cliente_nome: "",
-        nome_divisao_original: "",
+        area: "",
         prioridade_desc: "",
         operador_responsavel: "",
     });
@@ -36,14 +36,14 @@ const NewPost = () => {
         const vmultiUrl = (process.env.REACT_APP_VMULTI_API);
         const vmultiKey = (process.env.REACT_APP_SENHA_WS);
         const vmultiUser = (process.env.REACT_APP_USUARIO_WS);
-        const url = `${vmultiUrl}&campos_dinamicos={"numeros":${idChamado},"senha_ws":"${vmultiKey}", "usuario_ws":"${vmultiUser}"}&return_dinamicos={"dados":["apenas_data_abertura","cliente_nome","nome_divisao_original","numero","prioridade_desc","operador_responsavel","problema", "idcamposvariaveis_775"]}`;
+        const url = `${vmultiUrl}&campos_dinamicos={"numeros":${idChamado},"senha_ws":"${vmultiKey}", "usuario_ws":"${vmultiUser}"}&return_dinamicos={"dados":["apenas_data_abertura","cliente_nome","area","numero","prioridade_desc","operador_responsavel","problema", "idcamposvariaveis_775"]}`;
         try {
             const response = await fetch(url);
             const data = await response.json();
             if (data && data.length > 0) {
                 setChamado(data[0]);
                 setTitulo(data[0].idcamposvariaveis_775);
-                setModulo(data[0].nome_divisao_original);
+                setModulo(data[0].area);
                 setCliente(data[0].cliente_nome);
                 setConsultor(data[0].operador_responsavel);
                 setSolicitacao(data[0].problema);
@@ -185,7 +185,7 @@ const NewPost = () => {
                                             type="text"
                                             name="modulo"
                                             placeholder="Digite o Módulo/Submódulo"
-                                            value={chamado ? chamado.nome_divisao_original : ''}
+                                            value={chamado ? chamado.area : ''}
                                             readOnly
                                             className='border-input'
                                         />

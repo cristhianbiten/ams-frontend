@@ -68,10 +68,10 @@ function NavComponent() {
                             >
                                 <Nav.Link style={{ fontSize: '18px' }} href={`/`}>Home</Nav.Link>
                                 <Nav.Link style={{ fontSize: '18px' }} href={`/new`}>Criar</Nav.Link>
-                                <NavDropdown style={{ fontSize: '18px' }} title="Outros" id="navbarScrollingDropdown" menuVariant='dark'>
-                                    {user && (
-                                        <NavDropdown.Item href={`/users/${user._id}`}>Dashbord</NavDropdown.Item>
+                                {user && (
+                                        <Nav.Link style={{ fontSize: '18px' }} href={`/users/${user._id}`}>Dashbord</Nav.Link>
                                     )}
+                                <NavDropdown style={{ fontSize: '18px' }} title="Outros" id="navbarScrollingDropdown" menuVariant='dark'>
                                     <NavDropdown.Item href={`/profile`}>
                                         Perfil
                                     </NavDropdown.Item>
