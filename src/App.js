@@ -74,7 +74,7 @@ function App() {
             />
             <Route
               path="/search"
-              element={auth ? <Search /> : <Navigate to="/login" />}
+              element={<Search />}
             />
             <Route
               path="/login"

@@ -5,6 +5,7 @@ import noteReducer from "./slices/noteSlice";
 import historyReducer from "./slices/historySlice";
 import moduloReducer from "./slices/moduloSlice";
 import submoduloReducer from "./slices/submoduloSlice";
+import processoNegocioReducer from "./slices/processoNegocioSlice";
 
 export const store = configureStore({
     reducer: {
@@ -14,5 +15,6 @@ export const store = configureStore({
         history: historyReducer,
         modulo: moduloReducer,
         submodulo: submoduloReducer,
+        processoNegocio: processoNegocioReducer,
     },
 });

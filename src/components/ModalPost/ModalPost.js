@@ -7,6 +7,7 @@ import Form from 'react-bootstrap/Form';
 import Modal from 'react-bootstrap/Modal';
 import { MdAdd } from 'react-icons/md';
 import { publishSubmodulo } from "../../slices/submoduloSlice";
+import { publishProcessoNegocio } from "../../slices/processoNegocioSlice";
 
 export const ModalPost = ({ data }) => {
     const dispatch = useDispatch();
@@ -25,6 +26,12 @@ export const ModalPost = ({ data }) => {
         error: errorSubmodulo,
         message: messageSubmodulo,
     } = useSelector((state) => state.submodulo);
+
+    const {
+        loading: loadingProcessoNegocio,
+        error: errorProcessoNegocio,
+        message: messageProcessoNegocio,
+    } = useSelector((state) => state.processoNegocio);
 
     function resetComponentMessage() {
         setTimeout(() => {
@@ -53,7 +60,7 @@ export const ModalPost = ({ data }) => {
 
                 console.log(infoData);
 
-                await dispatch(publishSubmodulo(infoData));
+                dispatch(publishSubmodulo(infoData));
 
                 setNome('');
 
@@ -66,22 +73,39 @@ export const ModalPost = ({ data }) => {
             } catch (error) {
                 console.log(error);
             }
+
         } else if (data && data.tipo === 'processoNegocio') {
 
             const infoData = {
                 nome,
-                submodulos: data.id
+                submoduloId: data.id
             };
-            
-            console.log(data);
+
+            try {
+
+                dispatch(publishProcessoNegocio(infoData));
+
+                setNome('');
+
+                resetComponentMessage();
+
+                setTimeout(() => {
+                    handleClose();
+                }, 4000);
+
+            } catch (error) {
+                console.log(error);
+            }
+
         } else {
+
             const infoData = {
                 nome,
             };
 
             try {
 
-                await dispatch(publishModulo(infoData));
+                dispatch(publishModulo(infoData));
 
                 setNome('');
 
@@ -94,11 +118,8 @@ export const ModalPost = ({ data }) => {
             } catch (error) {
                 console.log(error);
             }
-
         }
-
     };
-
 
     return (
         <div style={{ margin: '0' }}>
@@ -149,12 +170,23 @@ export const ModalPost = ({ data }) => {
                                 </Button>
                             </div>
                         )}
+                        {loadingProcessoNegocio && (
+                            <div className="d-grid gap-2" style={{ marginBottom: '1.5rem' }}>
+                                <Button variant="warning" size="lg" type="submit" disabled
+                                    style={{ width: '40%', margin: '0 auto' }}
+                                >
+                                    Aguarde...
+                                </Button>
+                            </div>
+                        )}
 
                         {errorModulo && <Message msg={errorModulo} type="error" />}
                         {errorSubmodulo && <Message msg={errorSubmodulo} type="error" />}
+                        {errorProcessoNegocio && <Message msg={errorProcessoNegocio} type="error" />}
 
                         {messageModulo && <Message msg={messageModulo} type="success" />}
                         {messageSubmodulo && <Message msg={messageSubmodulo} type="success" />}
+                        {messageProcessoNegocio && <Message msg={messageProcessoNegocio} type="success" />}|
                     </Modal.Footer>
                 </Form>
             </Modal>

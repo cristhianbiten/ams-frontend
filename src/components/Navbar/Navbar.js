@@ -69,8 +69,8 @@ function NavComponent() {
                                 <Nav.Link style={{ fontSize: '18px' }} href={`/`}>Home</Nav.Link>
                                 <Nav.Link style={{ fontSize: '18px' }} href={`/new`}>Criar</Nav.Link>
                                 {user && (
-                                        <Nav.Link style={{ fontSize: '18px' }} href={`/users/${user._id}`}>Dashbord</Nav.Link>
-                                    )}
+                                    <Nav.Link style={{ fontSize: '18px' }} href={`/users/${user._id}`}>Dashbord</Nav.Link>
+                                )}
                                 <NavDropdown style={{ fontSize: '18px' }} title="Outros" id="navbarScrollingDropdown" menuVariant='dark'>
                                     <NavDropdown.Item href={`/profile`}>
                                         Perfil
@@ -84,21 +84,11 @@ function NavComponent() {
                                     </NavDropdown.Item>
                                 </NavDropdown>
                             </Nav>
-                            <Form className="d-flex" onSubmit={handleSearch} >
-                                <Form.Control
-                                    type="search"
-                                    placeholder="Buscar Notes"
-                                    className="me-2"
-                                    aria-label="Search"
-                                    value={query}
-                                    onChange={(e) => setQuery(e.target.value)}
-                                />
-                                <Button variant="outline-warning" type='submit'>Buscar</Button>
-                            </Form>
+
                         </>
                     ) : (
                         <>
-                            
+
                             <Nav
                                 className="me-auto my-2 my-lg-0"
                                 style={{ maxHeight: '100px' }}
@@ -110,7 +100,17 @@ function NavComponent() {
                             </Nav>
                         </>
                     )}
-
+                    <Form className="d-flex" onSubmit={handleSearch} >
+                        <Form.Control
+                            type="search"
+                            placeholder="Buscar Notes"
+                            className="me-2"
+                            aria-label="Search"
+                            value={query}
+                            onChange={(e) => setQuery(e.target.value)}
+                        />
+                        <Button variant="outline-warning" type='submit'>Buscar</Button>
+                    </Form>
                 </Navbar.Collapse>
             </Container>
         </Navbar>
