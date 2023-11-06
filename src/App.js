@@ -44,7 +44,7 @@ function App() {
               element={auth ? <NewPost /> : <Navigate to="/login" />}
             />
             <Route
-              path="/modulo"
+              path="/processoNegocio"
               element={auth ? <Modulo /> : <Navigate to="/login" />}
             />
             <Route

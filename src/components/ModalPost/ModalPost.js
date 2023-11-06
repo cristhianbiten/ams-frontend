@@ -131,11 +131,11 @@ export const ModalPost = ({ data }) => {
             <Modal show={show} onHide={handleClose}>
                 <Form onSubmit={onSubmit1}>
                     <Modal.Header closeButton>
-                        <Modal.Title>Adicionar</Modal.Title>
+                        <Modal.Title>Novo</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-                            <Form.Label>Teste</Form.Label>
+                            <Form.Label>Módulo/Submódulo/Processo de negócio</Form.Label>
                             <Form.Control
                                 type="text"
                                 placeholder="Digite módulo/submódulo/processo de negócio"

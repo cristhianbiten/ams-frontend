@@ -68,7 +68,7 @@ const Modulo = () => {
   return (
     <div className='modulo'>
       <Container>
-        <h2 className='titulo-modulo'>Módulo</h2>
+        <h2 className='titulo-modulo'>Processos de Negócio</h2>
         <Form>
           <Row className='mb-3'>
             <Col >
