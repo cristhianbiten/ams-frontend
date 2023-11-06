@@ -146,7 +146,9 @@ const NewPost = () => {
 
         resetComponentMessage();
 
-        e.target.reset();
+        setTimeout(() => {
+            e.target.reset();
+        }, 3000);
 
     }
 
