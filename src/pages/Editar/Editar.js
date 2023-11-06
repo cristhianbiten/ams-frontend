@@ -512,8 +512,8 @@ const Editar = () => {
                   <Form.Group className="mb-3" controlId="processoNegocio">
                     <Form.Label>Processo de Negócio:</Form.Label>
                     <Modulo
-                      onOptionChange={handleProcessoNegocioChange} // Passe a função de retorno de chamada
-                      currentProcessoNegocio={formData.processoNegocio} // Passe o valor atual do "Processo de Negócio"
+                      onOptionChange={handleProcessoNegocioChange} 
+                      currentProcessoNegocio={formData.processoNegocio} 
                     />
                   </Form.Group>
                 </Col>
