@@ -53,6 +53,7 @@ const NewPost = () => {
     const [descricaoSolucao, setDescricaoSolucao] = useState("");
     const [configuracoesExecutadas, setConfiguracoesExecutadas] = useState("");
     const [objetosAbap, setObjetosAbap] = useState("");
+    const [sintomas, setSintomas] = useState("");
 
 
     const handleChamadoChange = (event) => {
@@ -124,12 +125,14 @@ const NewPost = () => {
             cutover,
             request,
 
+            
             definicaoProblema,
             causaProblema,
             alternativaSolucao,
             pedidoMelhoria,
             reproducaoProblema,
 
+            sintomas,
             reproducaoProcesso,
             esclarecimentoDuvida,
             duvida,
@@ -576,7 +579,7 @@ const NewPost = () => {
                                                     type="text"
                                                     name="sintomas"
                                                     placeholder='Digite os sintomas'
-                                                    onChange={(e) => setDuvida(e.target.value)}
+                                                    onChange={(e) => setSintomas(e.target.value)}
                                                     className='textarea-input-large'
                                                 />
                                             </Form.Group>
