@@ -18,7 +18,6 @@ export const publishNote = createAsyncThunk(
 
         const data = await noteService.publishNote(note, token);
 
-        console.log(data.errors);
         // Check for errors
         if (data.errors) {
             return thunkAPI.rejectWithValue(data.errors[0]);

@@ -14,6 +14,7 @@
 
 /* Responsividade */
 @media (max-width: 768px) {
+
   #login,
   #register {
     max-width: 50%;
@@ -22,6 +23,7 @@
 }
 
 @media (max-width: 480px) {
+
   #login,
   #register {
     max-width: 70%;
@@ -36,12 +38,8 @@
 .password-toggle {
   position: absolute;
   top: 50%;
-  right: 10px; /* Ajuste a posição conforme necessário */
+  right: 10px;
+  /* Ajuste a posição conforme necessário */
   transform: translateY(-50%);
   cursor: pointer;
 }
-
-
-
-
-

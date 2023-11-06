@@ -19,7 +19,7 @@ import Search from './pages/Search/Search';
 import Editar from './pages/Editar/Editar';
 import History from './pages/History/History';
 import Narrativas from './pages/Narrativas/Narrativas';
-
+import Modulo from "./pages/Modulo/Modulo";
 
 function App() {
 
@@ -31,7 +31,6 @@ function App() {
 
   return (
     <div className="App">
-
       <BrowserRouter>
         <NavComponent />
         <div className="container" style={{ marginTop: '100px' }}>
@@ -43,6 +42,10 @@ function App() {
             <Route
               path="/new"
               element={auth ? <NewPost /> : <Navigate to="/login" />}
+            />
+            <Route
+              path="/modulo"
+              element={auth ? <Modulo /> : <Navigate to="/login" />}
             />
             <Route
               path="/profile"
@@ -67,7 +70,7 @@ function App() {
             />
             <Route
               path="/narrativas/:id"
-              element={<Narrativas /> }
+              element={<Narrativas />}
             />
             <Route
               path="/search"

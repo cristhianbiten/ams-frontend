@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { Modulo } from "../../components/Modulo/Modulo";
 
 const NewPost = () => {
     const dispatch = useDispatch();
@@ -26,6 +27,32 @@ const NewPost = () => {
         prioridade_desc: "",
         operador_responsavel: "",
     });
+
+    const [titulo, setTitulo] = useState("");
+    const [modulo, setModulo] = useState("");
+    const [cliente, setCliente] = useState("");
+    const [consultor, setConsultor] = useState("");
+    const [solicitacao, setSolicitacao] = useState("");
+    const [origemSolicitacao, setOrigemSolicitacao] = useState("");
+    const [termoBusca, setTermoBusca] = useState("");
+    const [processoNegocio, setProcessoNegocio] = useState("");
+    const [descricaoFuncional, setDescricaoFuncional] = useState("");
+    const [referenciaFt, setReferenciaFt] = useState("");
+    const [cutover, setCutover] = useState("");
+    const [request, setRequest] = useState("");
+    const [definicaoProblema, setDefinicaoProblema] = useState("");
+    const [causaProblema, setCausaProblema] = useState("");
+    const [alternativaSolucao, setAlternativaSolucao] = useState("");
+    const [pedidoMelhoria, setPedidoMelhoria] = useState("");
+    const [reproducaoProcesso, setReproducaoProcesso] = useState("");
+    const [esclarecimentoDuvida, setEsclarecimentoDuvida] = useState("");
+    const [prioridade, setPrioridade] = useState("");
+    const [reproducaoProblema, setReproducaoProblema] = useState("");
+    const [duvida, setDuvida] = useState("");
+    const [reproducaoErro, setReproducaoErro] = useState("");
+    const [descricaoSolucao, setDescricaoSolucao] = useState("");
+    const [configuracoesExecutadas, setConfiguracoesExecutadas] = useState("");
+    const [objetosAbap, setObjetosAbap] = useState("");
 
 
     const handleChamadoChange = (event) => {
@@ -70,31 +97,10 @@ const NewPost = () => {
         }, 2000);
     }
 
-    const [titulo, setTitulo] = useState("");
-    const [modulo, setModulo] = useState("");
-    const [cliente, setCliente] = useState("");
-    const [consultor, setConsultor] = useState("");
-    const [solicitacao, setSolicitacao] = useState("");
-    const [origemSolicitacao, setOrigemSolicitacao] = useState("");
-    const [termoBusca, setTermoBusca] = useState("");
-    const [processoNegocio, setProcessoNegocio] = useState("");
-    const [descricaoFuncional, setDescricaoFuncional] = useState("");
-    const [referenciaFt, setReferenciaFt] = useState("");
-    const [cutover, setCutover] = useState("");
-    const [request, setRequest] = useState("");
-    const [definicaoProblema, setDefinicaoProblema] = useState("");
-    const [causaProblema, setCausaProblema] = useState("");
-    const [alternativaSolucao, setAlternativaSolucao] = useState("");
-    const [pedidoMelhoria, setPedidoMelhoria] = useState("");
-    const [reproducaoProcesso, setReproducaoProcesso] = useState("");
-    const [esclarecimentoDuvida, setEsclarecimentoDuvida] = useState("");
-    const [prioridade, setPrioridade] = useState("");
-    const [reproducaoProblema, setReproducaoProblema] = useState("");
-    const [duvida, setDuvida] = useState("");
-    const [reproducaoErro, setReproducaoErro] = useState("");
-    const [descricaoSolucao, setDescricaoSolucao] = useState("");
-    const [configuracoesExecutadas, setConfiguracoesExecutadas] = useState("");
-    const [objetosAbap, setObjetosAbap] = useState("");
+    const handleProcessoNegocioChange = (value) => {
+        setProcessoNegocio(value);
+    }
+
 
     const onSubmit2 = (e) => {
 
@@ -274,15 +280,7 @@ const NewPost = () => {
                                             <Col>
                                                 <Form.Group className="mb-3" controlId="processoNegocio">
                                                     <Form.Label>Processo de Negócio:</Form.Label>
-                                                    <Form.Control
-                                                        as="textarea"
-                                                        rows={3}
-                                                        type="text"
-                                                        name="processoNegocio"
-                                                        placeholder='Digite o processo de negócio'
-                                                        onChange={(e) => setProcessoNegocio(e.target.value)}
-                                                        className='textarea-input'
-                                                    />
+                                                    <Modulo onOptionChange={handleProcessoNegocioChange} />
                                                 </Form.Group>
                                             </Col>
                                         </Row>
@@ -394,15 +392,7 @@ const NewPost = () => {
                                             <Col>
                                                 <Form.Group className="mb-3" controlId="processoNegocio">
                                                     <Form.Label>Processo de Negócio:</Form.Label>
-                                                    <Form.Control
-                                                        as="textarea"
-                                                        rows={3}
-                                                        type="text"
-                                                        name="processoNegocio"
-                                                        placeholder='Digite o processo de negócio'
-                                                        onChange={(e) => setProcessoNegocio(e.target.value)}
-                                                        className='textarea-input'
-                                                    />
+                                                    <Modulo onOptionChange={handleProcessoNegocioChange} />
                                                 </Form.Group>
                                             </Col>
                                         </Row>
@@ -515,15 +505,7 @@ const NewPost = () => {
                                         <Col>
                                             <Form.Group className="mb-3" controlId="processoNegocio">
                                                 <Form.Label>Processo de Negócio:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    type="text"
-                                                    name="processoNegocio"
-                                                    placeholder='Digite o processo de negócio'
-                                                    onChange={(e) => setProcessoNegocio(e.target.value)}
-                                                    className='textarea-input'
-                                                />
+                                                <Modulo onOptionChange={handleProcessoNegocioChange} />
                                             </Form.Group>
                                         </Col>
                                     </Row>
@@ -562,7 +544,7 @@ const NewPost = () => {
                                     <Row>
                                         <Col>
                                             <Form.Group className="mb-3" controlId="termoBusca">
-                                                <Form.Label>ETermos de Busca / Transações Envolvidas / Nº da Mensagem:</Form.Label>
+                                                <Form.Label>Termos de Busca / Transações Envolvidas / Nº da Mensagem:</Form.Label>
                                                 <Form.Control
                                                     as="textarea"
                                                     rows={3}
@@ -604,15 +586,7 @@ const NewPost = () => {
                                         <Col>
                                             <Form.Group className="mb-3" controlId="processoNegocio">
                                                 <Form.Label>Processo de Negócio:</Form.Label>
-                                                <Form.Control
-                                                    as="textarea"
-                                                    rows={3}
-                                                    type="text"
-                                                    name="processoNegocio"
-                                                    placeholder='Digite o processo de negócio'
-                                                    onChange={(e) => setProcessoNegocio(e.target.value)}
-                                                    className='textarea-input'
-                                                />
+                                                <Modulo onOptionChange={handleProcessoNegocioChange} />
                                             </Form.Group>
                                         </Col>
                                     </Row>

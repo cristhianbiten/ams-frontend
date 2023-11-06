@@ -75,6 +75,9 @@ function NavComponent() {
                                     <NavDropdown.Item href={`/profile`}>
                                         Perfil
                                     </NavDropdown.Item>
+                                    <NavDropdown.Item href={`/modulo`}>
+                                        Módulo
+                                    </NavDropdown.Item>
                                     <NavDropdown.Divider />
                                     <NavDropdown.Item onClick={handleLogout}>
                                         Logout

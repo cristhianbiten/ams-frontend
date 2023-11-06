@@ -112,6 +112,7 @@ const Profile = () => {
                         onChange={(e) => setPassword(e.target.value)}
                         value={password || ""}
                         className='border-input'
+                        
                     />
                 </Form.Group>
 

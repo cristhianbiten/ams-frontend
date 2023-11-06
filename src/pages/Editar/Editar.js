@@ -8,6 +8,7 @@ import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { Modulo } from "../../components/Modulo/Modulo";
 
 
 const Editar = () => {
@@ -38,6 +39,14 @@ const Editar = () => {
     setFormData({
       ...formData,
       [name]: value,
+    });
+  };
+
+  // Função para atualizar o valor do "Processo de Negócio" no estado do formulário
+  const handleProcessoNegocioChange = (selectedValue) => {
+    setFormData({
+      ...formData,
+      processoNegocio: selectedValue
     });
   };
 
@@ -76,7 +85,7 @@ const Editar = () => {
 
 
   return (<div className="new-post">
-    <h2>{formData.idChamado} - {formData.titulo}</h2>
+    <h2 style={{ textAlign: 'center', marginBottom: '1rem' }}>{formData.idChamado} - {formData.titulo}</h2>
     <Form onSubmit={handleUpdate}>
       <>
         <Container>
@@ -197,13 +206,9 @@ const Editar = () => {
                 <Col>
                   <Form.Group className="mb-3" controlId="processoNegocio">
                     <Form.Label>Processo de Negócio:</Form.Label>
-                    <Form.Control
-                      as="textarea"
-                      rows={3}
-                      name="processoNegocio"
-                      value={(formData && formData.processoNegocio) || ''}
-                      onChange={handleInputChange}
-                      className='textarea-input'
+                    <Modulo
+                      onOptionChange={handleProcessoNegocioChange} // Passe a função de retorno de chamada
+                      currentProcessoNegocio={formData.processoNegocio} // Passe o valor atual do "Processo de Negócio"
                     />
                   </Form.Group>
                 </Col>
@@ -310,13 +315,9 @@ const Editar = () => {
                 <Col>
                   <Form.Group className="mb-3" controlId="processoNegocio">
                     <Form.Label>Processo de Negócio:</Form.Label>
-                    <Form.Control
-                      as="textarea"
-                      rows={3}
-                      name="processoNegocio"
-                      value={(formData && formData.processoNegocio) || ''}
-                      className='textarea-input'
-                      onChange={handleInputChange}
+                    <Modulo
+                      onOptionChange={handleProcessoNegocioChange} // Passe a função de retorno de chamada
+                      currentProcessoNegocio={formData.processoNegocio} // Passe o valor atual do "Processo de Negócio"
                     />
                   </Form.Group>
                 </Col>
@@ -425,14 +426,9 @@ const Editar = () => {
                 <Col>
                   <Form.Group className="mb-3" controlId="processoNegocio">
                     <Form.Label>Processo de Negócio:</Form.Label>
-                    <Form.Control
-                      as="textarea"
-                      rows={3}
-                      type="text"
-                      name="processoNegocio"
-                      value={(formData && formData.processoNegocio) || ''}
-                      className='textarea-input'
-                      onChange={handleInputChange}
+                    <Modulo
+                      onOptionChange={handleProcessoNegocioChange} // Passe a função de retorno de chamada
+                      currentProcessoNegocio={formData.processoNegocio} // Passe o valor atual do "Processo de Negócio"
                     />
                   </Form.Group>
                 </Col>
@@ -515,14 +511,9 @@ const Editar = () => {
                 <Col>
                   <Form.Group className="mb-3" controlId="processoNegocio">
                     <Form.Label>Processo de Negócio:</Form.Label>
-                    <Form.Control
-                      as="textarea"
-                      rows={3}
-                      type="text"
-                      name="processoNegocio"
-                      value={(formData && formData.processoNegocio) || ''}
-                      className='textarea-input'
-                      onChange={handleInputChange}
+                    <Modulo
+                      onOptionChange={handleProcessoNegocioChange} // Passe a função de retorno de chamada
+                      currentProcessoNegocio={formData.processoNegocio} // Passe o valor atual do "Processo de Negócio"
                     />
                   </Form.Group>
                 </Col>
