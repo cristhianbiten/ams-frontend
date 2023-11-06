@@ -322,7 +322,7 @@ const NoteView = ({ note }) => {
                                 <Col>
                                     <Form.Group className="mb-3" controlId="descricaoSolucao">
                                         <Form.Label>Descrição da Solução:</Form.Label>
-                                        <p className='bordered-paragraph'>{(note && note.configuracoesExecutadas) || ''}</p>
+                                        <p className='bordered-paragraph'>{(note && note.descricaoSolucao) || ''}</p>
                                     </Form.Group>
                                 </Col>
                             </Row>
