@@ -18,7 +18,7 @@ const NoteDetail = ({ note }) => {
             <Card
                 border='secondary'
                 text={'dark'}
-                style={{ width: '18rem' }}
+                style={{ width: '18rem', height: '14rem' }}
                 className="mb-2"
                 bg='Light'
             >
@@ -28,8 +28,8 @@ const NoteDetail = ({ note }) => {
                     <Card.Text>
                         {note.modulo}
                     </Card.Text>
-                    <Button variant="warning" href={`/note/${note._id}`} style={{ marginBottom: '15px' }}>Ler mais</Button>
                 </Card.Body>
+                <Button variant="warning" href={`/note/${note._id}`} style={{ marginBottom: '1.5rem', width: '6rem', marginLeft: '1rem' }}>Ler mais</Button>
             </Card>
         </Container>
     );
