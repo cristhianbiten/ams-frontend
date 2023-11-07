@@ -65,10 +65,9 @@ export const getNote = createAsyncThunk("note/getnote", async (id) => {
 
 export const searchNotes = createAsyncThunk(
     "note/search",
-    async (query, thunkAPI) => {
-        const token = thunkAPI.getState().auth.user.token;
+    async (query) => {
 
-        const data = await noteService.searchNotes(query, token);
+        const data = await noteService.searchNotes(query);
 
         return data;
     }

@@ -102,8 +102,9 @@ function NavComponent() {
                     )}
                     <Form className="d-flex" onSubmit={handleSearch} >
                         <Form.Control
+                            style={{ width: '300px' }}
                             type="search"
-                            placeholder="Buscar Notes"
+                            placeholder="Buscar notes, transações, módulos etc "
                             className="me-2"
                             aria-label="Search"
                             value={query}
