@@ -14,7 +14,6 @@ const Home = () => {
 
     const { notes, loading } = useSelector((state) => state.note);
 
-    // Load all notes
     useEffect(() => {
         dispatch(getNotes());
     }, [dispatch]);
