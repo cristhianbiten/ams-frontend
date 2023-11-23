@@ -37,7 +37,7 @@ function App() {
           <Routes>
             <Route
               path="/"
-              element={<Home />}
+              element={auth ? <Home /> : <Navigate to="/login" />}
             />
             <Route
               path="/new"
@@ -74,7 +74,7 @@ function App() {
             />
             <Route
               path="/search"
-              element={<Search />}
+              element={auth ? <Search /> : <Navigate to="/login" />}
             />
             <Route
               path="/login"

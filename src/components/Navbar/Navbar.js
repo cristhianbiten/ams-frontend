@@ -84,7 +84,18 @@ function NavComponent() {
                                     </NavDropdown.Item>
                                 </NavDropdown>
                             </Nav>
-
+                            <Form className="d-flex" onSubmit={handleSearch} >
+                                <Form.Control
+                                    style={{ width: '300px' }}
+                                    type="search"
+                                    placeholder="Buscar notes, transações, módulos etc "
+                                    className="me-2"
+                                    aria-label="Search"
+                                    value={query}
+                                    onChange={(e) => setQuery(e.target.value)}
+                                />
+                                <Button variant="outline-warning" type='submit'>Buscar</Button>
+                            </Form>
                         </>
                     ) : (
                         <>
@@ -94,24 +105,12 @@ function NavComponent() {
                                 style={{ maxHeight: '100px' }}
                                 navbarScroll
                             >
-                                <Nav.Link style={{ fontSize: '18px' }} href={`/`}>Home</Nav.Link>
                                 <Nav.Link style={{ fontSize: '18px' }} href={`/login`}>Login</Nav.Link>
                                 <Nav.Link style={{ fontSize: '18px' }} href={`/register`}>Cadastrar</Nav.Link>
                             </Nav>
                         </>
                     )}
-                    <Form className="d-flex" onSubmit={handleSearch} >
-                        <Form.Control
-                            style={{ width: '300px' }}
-                            type="search"
-                            placeholder="Buscar notes, transações, módulos etc "
-                            className="me-2"
-                            aria-label="Search"
-                            value={query}
-                            onChange={(e) => setQuery(e.target.value)}
-                        />
-                        <Button variant="outline-warning" type='submit'>Buscar</Button>
-                    </Form>
+
                 </Navbar.Collapse>
             </Container>
         </Navbar>
